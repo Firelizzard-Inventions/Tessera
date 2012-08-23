@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424C7A1C15E3531800CE0FF3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 424C7A1B15E3531800CE0FF3 /* libsqlite3.dylib */; };
+		424C7A2115E3535000CE0FF3 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 424C7A2015E3535000CE0FF3 /* DBConnection.m */; };
 		42D4196D15E3387F000CE8A1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D4196C15E3387F000CE8A1 /* Cocoa.framework */; };
 		42D4197715E3387F000CE8A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42D4197515E3387F000CE8A1 /* InfoPlist.strings */; };
 		42D4197915E3387F000CE8A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D4197815E3387F000CE8A1 /* main.m */; };
@@ -16,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		424C7A1B15E3531800CE0FF3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		424C7A1F15E3535000CE0FF3 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
+		424C7A2015E3535000CE0FF3 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
 		42D4196815E3387F000CE8A1 /* Tessera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tessera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D4196C15E3387F000CE8A1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		42D4196F15E3387F000CE8A1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -36,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424C7A1C15E3531800CE0FF3 /* libsqlite3.dylib in Frameworks */,
 				42D4196D15E3387F000CE8A1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,10 +49,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		424C7A1E15E3532000CE0FF3 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				424C7A1B15E3531800CE0FF3 /* libsqlite3.dylib */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		42D4195D15E3387F000CE8A1 = {
 			isa = PBXGroup;
 			children = (
 				42D4197215E3387F000CE8A1 /* Tessera */,
+				424C7A1E15E3532000CE0FF3 /* Libraries */,
 				42D4196B15E3387F000CE8A1 /* Frameworks */,
 				42D4196915E3387F000CE8A1 /* Products */,
 			);
@@ -82,10 +97,12 @@
 		42D4197215E3387F000CE8A1 /* Tessera */ = {
 			isa = PBXGroup;
 			children = (
+				42D4197315E3387F000CE8A1 /* Supporting Files */,
 				42D4197E15E3387F000CE8A1 /* AppDelegate.h */,
 				42D4197F15E3387F000CE8A1 /* AppDelegate.m */,
 				42D4198115E3387F000CE8A1 /* MainMenu.xib */,
-				42D4197315E3387F000CE8A1 /* Supporting Files */,
+				424C7A1F15E3535000CE0FF3 /* DBConnection.h */,
+				424C7A2015E3535000CE0FF3 /* DBConnection.m */,
 			);
 			path = Tessera;
 			sourceTree = "<group>";
@@ -168,6 +185,7 @@
 			files = (
 				42D4197915E3387F000CE8A1 /* main.m in Sources */,
 				42D4198015E3387F000CE8A1 /* AppDelegate.m in Sources */,
+				424C7A2115E3535000CE0FF3 /* DBConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +269,7 @@
 		42D4198715E3387F000CE8A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tessera/Tessera-Prefix.pch";
@@ -263,6 +282,7 @@
 		42D4198815E3387F000CE8A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tessera/Tessera-Prefix.pch";
@@ -291,6 +311,7 @@
 				42D4198815E3387F000CE8A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
